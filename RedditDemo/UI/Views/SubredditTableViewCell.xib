@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="0Lb-to-AGa" customClass="SubredditTableViewCell" customModule="RedditDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Lb-to-AGa" id="yJs-fO-vw2">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="108.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXX-Y8-4oV">
+                        <rect key="frame" x="8" y="8" width="65" height="65"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj6-hB-OaN">
+                        <rect key="frame" x="81" y="8" width="286" height="65"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgI-E0-yMF">
+                        <rect key="frame" x="8" y="82" width="335" height="21"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.64345854922279799" green="0.64345854922279799" blue="0.64345854922279799" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-Star-50" translatesAutoresizingMaskIntoConstraints="NO" id="R2G-MF-dPF">
+                        <rect key="frame" x="351" y="85" width="16" height="16"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Yj6-hB-OaN" firstAttribute="height" secondItem="yJs-fO-vw2" secondAttribute="height" constant="-43.5" id="WME-vh-k4x"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Yj6-hB-OaN" secondAttribute="trailing" id="dRh-Gr-VNe"/>
+                    <constraint firstItem="Yj6-hB-OaN" firstAttribute="leading" secondItem="yJs-fO-vw2" secondAttribute="leadingMargin" constant="73" id="ehT-Vq-nPn"/>
+                    <constraint firstAttribute="topMargin" secondItem="Yj6-hB-OaN" secondAttribute="top" id="o1U-De-6ld"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="commentsLabel" destination="cgI-E0-yMF" id="Tpr-Mv-1ML"/>
+                <outlet property="favoriteIcon" destination="R2G-MF-dPF" id="nmp-Mx-asr"/>
+                <outlet property="thumbnailView" destination="wXX-Y8-4oV" id="rTB-oh-sCH"/>
+                <outlet property="titleLabel" destination="Yj6-hB-OaN" id="RQR-MX-zUJ"/>
+            </connections>
+            <point key="canvasLocation" x="37.5" y="92.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icons8-Star-50" width="25" height="25"/>
+    </resources>
+</document>

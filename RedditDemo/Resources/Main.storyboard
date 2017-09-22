@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i3I-az-fkD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Subreddits View Controller-->
+        <scene sceneID="MvX-iu-QNc">
+            <objects>
+                <viewController id="xtM-YC-yLe" customClass="SubredditsViewController" customModule="RedditDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eOx-i0-OuU"/>
+                        <viewControllerLayoutGuide type="bottom" id="EU7-FJ-0sJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eOv-kz-Nbv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pZd-f2-0yu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.90129128889999999" green="0.90129128889999999" blue="0.90129128889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xIN-eF-UD8"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="showingOnlyFavorites" value="NO"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="searchIsEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="tableView" destination="pZd-f2-0yu" id="mky-eH-6AE"/>
+                        <segue destination="K9x-hU-wq9" kind="show" identifier="openWebVIewSegue" id="VJe-P9-RZR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LDa-oO-uoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="-636"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="iSD-HJ-42Y">
+            <objects>
+                <viewController id="K9x-hU-wq9" customClass="SubredditPageViewController" customModule="RedditDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PwO-E1-2Ty"/>
+                        <viewControllerLayoutGuide type="bottom" id="hJN-px-3eV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zwn-WQ-f6B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfO-uC-QPH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="xjg-Tv-NrM">
+                        <barButtonItem key="rightBarButtonItem" image="icons8-Star-50" id="Odh-9v-WC7">
+                            <connections>
+                                <action selector="favoriteButtonWasPressed:" destination="K9x-hU-wq9" id="X8V-ho-b4L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="favoriteButton" destination="Odh-9v-WC7" id="yh2-nM-tZR"/>
+                        <outlet property="webView" destination="TfO-uC-QPH" id="8Gd-Ho-Q4M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7k-8h-Slb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2117.5999999999999" y="-189.3553223388306"/>
+        </scene>
+        <!--Top-->
+        <scene sceneID="br9-z2-8BD">
+            <objects>
+                <navigationController id="oOZ-lk-RJf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Top" image="icons8-Reddit Filled-50" id="mIR-39-u7U"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="242-VH-Nbo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xtM-YC-yLe" kind="relationship" relationship="rootViewController" id="xvj-yq-Pkp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHz-ee-UX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="-636"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="sGf-hm-KNQ">
+            <objects>
+                <tabBarController id="i3I-az-fkD" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="8kx-9p-KZH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="oOZ-lk-RJf" kind="relationship" relationship="viewControllers" id="BiN-8j-aHX"/>
+                        <segue destination="Yv4-Lj-E1z" kind="relationship" relationship="viewControllers" id="bLL-0I-IBK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqU-px-DAN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-705" y="-215"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="QxR-fr-KhY">
+            <objects>
+                <navigationController id="Yv4-Lj-E1z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" image="icons8-Star Filled-50" id="B9Z-6Y-5hV"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Cg-Ck-Z5t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dPM-Qd-9dh" kind="relationship" relationship="rootViewController" id="Cxv-t0-eKF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ooe-b5-HVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="246" y="83"/>
+        </scene>
+        <!--Subreddits View Controller-->
+        <scene sceneID="pE4-PB-3M1">
+            <objects>
+                <viewController id="dPM-Qd-9dh" customClass="SubredditsViewController" customModule="RedditDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z1U-us-WG6"/>
+                        <viewControllerLayoutGuide type="bottom" id="lor-DQ-y61"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z5x-Re-mla">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vVA-nq-yHW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.90129128889999999" green="0.90129128889999999" blue="0.90129128889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="O7z-uM-ex0"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="showingOnlyFavorites" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="searchIsEnabled" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="tableView" destination="vVA-nq-yHW" id="o2y-bS-4G6"/>
+                        <segue destination="K9x-hU-wq9" kind="show" identifier="openWebVIewSegue" id="tvR-es-Tnv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCa-Ck-tX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="82"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-Reddit Filled-50" width="25" height="25"/>
+        <image name="icons8-Star Filled-50" width="25" height="25"/>
+        <image name="icons8-Star-50" width="25" height="25"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tvR-es-Tnv"/>
+    </inferredMetricsTieBreakers>
+</document>
